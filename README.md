@@ -1,2 +1,2 @@
 # lisptick-js
-Lipstick JavaScript Client
+Lisptick JavaScript Client

@@ -69,7 +69,7 @@ class LisptickSocket {
     }
   }
 
-  listen(message, setStateFunction, callback=undefined) {
+  listen(message, setStateFunction, callback=undefined, callbackClose=undefined) {
 
 
     switch (message) {
@@ -112,6 +112,9 @@ class LisptickSocket {
             this.socketReader.consumeResult();
           }
         };
+
+        if (typeof callbackClose === 'function')
+          callbackClose();
         break;
       default:
         break;

@@ -793,7 +793,7 @@ class SocketReader {
       
       // set state
       // TODO : manage result
-      this.setStateFunction({ items: this.status.datas?.[0] || [] });
+      this.setStateFunction({ items: this.status.datas[0] || [] });
 
       if (result !== undefined) {
         this.consumeBuffer(this.level);

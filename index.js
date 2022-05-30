@@ -108,13 +108,12 @@ class LisptickSocket {
       case 'close':
         // On WebSocket closing
         this.client.onclose = (msg) => {
+          if (typeof callbackClose === 'function')
+            callbackClose();
           if (this.socketReader.ws_buffer.byteLength > 12) {
             this.socketReader.consumeResult();
           }
         };
-
-        if (typeof callbackClose === 'function')
-          callbackClose();
         break;
       default:
         break;
